@@ -31,13 +31,13 @@
 			this.imperialRadioButton = new System.Windows.Forms.RadioButton();
 			this.metricRadioButton = new System.Windows.Forms.RadioButton();
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-			this.myHeightLabel = new System.Windows.Forms.Label();
 			this.heightTextBox = new System.Windows.Forms.TextBox();
-			this.myWieghtLabel = new System.Windows.Forms.Label();
+			this.myHeightLabel = new System.Windows.Forms.Label();
 			this.wieghtTextBox = new System.Windows.Forms.TextBox();
 			this.calculateBMIButton = new System.Windows.Forms.Button();
-			this.textBox1 = new System.Windows.Forms.TextBox();
+			this.calcTextBox = new System.Windows.Forms.TextBox();
 			this.BMIScaleTextBox = new System.Windows.Forms.TextBox();
+			this.myWieghtLabel = new System.Windows.Forms.Label();
 			this.tableLayoutPanel1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -63,7 +63,6 @@
 			this.metricRadioButton.Name = "metricRadioButton";
 			this.metricRadioButton.Size = new System.Drawing.Size(106, 35);
 			this.metricRadioButton.TabIndex = 1;
-			this.metricRadioButton.TabStop = true;
 			this.metricRadioButton.Text = "Metric";
 			this.metricRadioButton.UseVisualStyleBackColor = true;
 			// 
@@ -81,7 +80,7 @@
 			this.tableLayoutPanel1.Controls.Add(this.myHeightLabel, 0, 1);
 			this.tableLayoutPanel1.Controls.Add(this.wieghtTextBox, 1, 2);
 			this.tableLayoutPanel1.Controls.Add(this.calculateBMIButton, 0, 3);
-			this.tableLayoutPanel1.Controls.Add(this.textBox1, 0, 4);
+			this.tableLayoutPanel1.Controls.Add(this.calcTextBox, 0, 4);
 			this.tableLayoutPanel1.Controls.Add(this.BMIScaleTextBox, 0, 5);
 			this.tableLayoutPanel1.Controls.Add(this.myWieghtLabel, 0, 2);
 			this.tableLayoutPanel1.Location = new System.Drawing.Point(1, 1);
@@ -98,6 +97,15 @@
 			this.tableLayoutPanel1.TabIndex = 2;
 			this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
 			// 
+			// heightTextBox
+			// 
+			this.heightTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.heightTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.heightTextBox.Location = new System.Drawing.Point(178, 90);
+			this.heightTextBox.Name = "heightTextBox";
+			this.heightTextBox.Size = new System.Drawing.Size(100, 38);
+			this.heightTextBox.TabIndex = 4;
+			// 
 			// myHeightLabel
 			// 
 			this.myHeightLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -109,26 +117,6 @@
 			this.myHeightLabel.TabIndex = 3;
 			this.myHeightLabel.Text = "My Height";
 			this.myHeightLabel.Click += new System.EventHandler(this.MyHeightLabel_Click);
-			// 
-			// heightTextBox
-			// 
-			this.heightTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.heightTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.heightTextBox.Location = new System.Drawing.Point(178, 90);
-			this.heightTextBox.Name = "heightTextBox";
-			this.heightTextBox.Size = new System.Drawing.Size(100, 38);
-			this.heightTextBox.TabIndex = 4;
-			// 
-			// myWieghtLabel
-			// 
-			this.myWieghtLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.myWieghtLabel.AutoSize = true;
-			this.myWieghtLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.myWieghtLabel.Location = new System.Drawing.Point(5, 167);
-			this.myWieghtLabel.Name = "myWieghtLabel";
-			this.myWieghtLabel.Size = new System.Drawing.Size(141, 31);
-			this.myWieghtLabel.TabIndex = 5;
-			this.myWieghtLabel.Text = "My Weight";
 			// 
 			// wieghtTextBox
 			// 
@@ -150,17 +138,18 @@
 			this.calculateBMIButton.TabIndex = 7;
 			this.calculateBMIButton.Text = "Calculate BMI";
 			this.calculateBMIButton.UseVisualStyleBackColor = true;
+			this.calculateBMIButton.Click += new System.EventHandler(this.calculateBMIButton_Click);
 			// 
-			// textBox1
+			// calcTextBox
 			// 
-			this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.tableLayoutPanel1.SetColumnSpan(this.textBox1, 2);
-			this.textBox1.Enabled = false;
-			this.textBox1.Location = new System.Drawing.Point(54, 309);
-			this.textBox1.Name = "textBox1";
-			this.textBox1.ReadOnly = true;
-			this.textBox1.Size = new System.Drawing.Size(197, 38);
-			this.textBox1.TabIndex = 8;
+			this.calcTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.tableLayoutPanel1.SetColumnSpan(this.calcTextBox, 2);
+			this.calcTextBox.Enabled = false;
+			this.calcTextBox.Location = new System.Drawing.Point(54, 309);
+			this.calcTextBox.Name = "calcTextBox";
+			this.calcTextBox.ReadOnly = true;
+			this.calcTextBox.Size = new System.Drawing.Size(197, 38);
+			this.calcTextBox.TabIndex = 8;
 			// 
 			// BMIScaleTextBox
 			// 
@@ -173,6 +162,17 @@
 			this.BMIScaleTextBox.ReadOnly = true;
 			this.BMIScaleTextBox.Size = new System.Drawing.Size(192, 53);
 			this.BMIScaleTextBox.TabIndex = 9;
+			// 
+			// myWieghtLabel
+			// 
+			this.myWieghtLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.myWieghtLabel.AutoSize = true;
+			this.myWieghtLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.myWieghtLabel.Location = new System.Drawing.Point(5, 167);
+			this.myWieghtLabel.Name = "myWieghtLabel";
+			this.myWieghtLabel.Size = new System.Drawing.Size(141, 31);
+			this.myWieghtLabel.TabIndex = 5;
+			this.myWieghtLabel.Text = "My Weight";
 			// 
 			// BMICalcForm
 			// 
@@ -203,7 +203,7 @@
 		private System.Windows.Forms.Label myWieghtLabel;
 		private System.Windows.Forms.TextBox wieghtTextBox;
 		private System.Windows.Forms.Button calculateBMIButton;
-		private System.Windows.Forms.TextBox textBox1;
+		private System.Windows.Forms.TextBox calcTextBox;
 		private System.Windows.Forms.TextBox BMIScaleTextBox;
 	}
 }
