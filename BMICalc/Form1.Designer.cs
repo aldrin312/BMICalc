@@ -53,6 +53,7 @@
 			this.imperialRadioButton.TabStop = true;
 			this.imperialRadioButton.Text = "Imperial";
 			this.imperialRadioButton.UseVisualStyleBackColor = true;
+			this.imperialRadioButton.Click += new System.EventHandler(this.imperialRadioButton_Click);
 			// 
 			// metricRadioButton
 			// 
@@ -65,6 +66,7 @@
 			this.metricRadioButton.TabIndex = 1;
 			this.metricRadioButton.Text = "Metric";
 			this.metricRadioButton.UseVisualStyleBackColor = true;
+			this.metricRadioButton.Click += new System.EventHandler(this.metricRadioButton_Click);
 			// 
 			// tableLayoutPanel1
 			// 
@@ -95,7 +97,7 @@
 			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
 			this.tableLayoutPanel1.Size = new System.Drawing.Size(305, 440);
 			this.tableLayoutPanel1.TabIndex = 2;
-			this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
+			
 			// 
 			// heightTextBox
 			// 
@@ -116,7 +118,7 @@
 			this.myHeightLabel.Size = new System.Drawing.Size(136, 31);
 			this.myHeightLabel.TabIndex = 3;
 			this.myHeightLabel.Text = "My Height";
-			this.myHeightLabel.Click += new System.EventHandler(this.MyHeightLabel_Click);
+			
 			// 
 			// wieghtTextBox
 			// 

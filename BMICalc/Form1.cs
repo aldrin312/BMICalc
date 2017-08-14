@@ -7,7 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+/*Name  : Aldrin Fernandez
+ * ID   : 300936281
+ * Date : August 14,2017
+ * Description : This is a BMI calculator
+ * Version : use the inputs to calculate the BMI and scale
+ */
 namespace BMICalc
 {
 	public partial class BMICalcForm : Form
@@ -17,21 +22,18 @@ namespace BMICalc
 			InitializeComponent();
 		}
 
-		private void MyHeightLabel_Click(object sender, EventArgs e)
-		{
-
-		}
 
 		private void Form1_Load(object sender, EventArgs e)
 		{
 
 		}
 
-		private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-		{
 
-		}
-
+		/// <summary>
+		/// This is the event that calculate the BMI depending on the selected unit
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		private void calculateBMIButton_Click(object sender, EventArgs e)
 		{
 			double BMI = 0;
@@ -39,7 +41,6 @@ namespace BMICalc
 			height = double.Parse(heightTextBox.Text);
 			double weight = 0;
 			weight = double.Parse(wieghtTextBox.Text);
-
 
 
 			if (metricRadioButton.Checked == true)
@@ -78,7 +79,21 @@ namespace BMICalc
 
 
 		}
+		/// <summary>
+		/// This change the units on the myWiegjtLabel and myHeightLabel according to the selected unit
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void imperialRadioButton_Click(object sender, EventArgs e)
+		{
+			myWieghtLabel.Text = "My Wieght (lb)";
+			myHeightLabel.Text = "My Height (in)";
+		}
 
-
+		private void metricRadioButton_Click(object sender, EventArgs e)
+		{
+			myWieghtLabel.Text = "My Wieght (kg)";
+			myHeightLabel.Text = "My Height (m)";
+		}
 	}
 }
